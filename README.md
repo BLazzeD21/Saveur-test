@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### Как запустить проект локально (команды)
 
-## Getting Started
+## Разработка
 
-First, run the development server:
+Для запуска проекта в режиме разработки выполните команду:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Приложение будет доступно по адресу:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+https://localhost:5500
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+> Проект запускается с использованием HTTPS
 
-## Learn More
+## Production
 
-To learn more about Next.js, take a look at the following resources:
+Перед запуском продакш версии необходимо выполнить сборку:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Запуск сервера:
 
-## Deploy on Vercel
+```bash
+npm run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Дополнительные команды
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run typecheck #Проверка типов TypeScript
+npm run lint #Проверка кода линтером
+npm run lint:fix #Автоматическое исправление замечаний линтера
+npm run format #Форматирование кода
+npm run check #Выполняет проверку типов и линтинг
+```
+
+## Управление версиями
+
+```bash
+npm run patch #Patch
+npm run minor #Minor
+npm run major #Major
+```
+
+
+### Какие решения ты принял и почему (коротко, 3–5 предложений)
+
+Для линтинга и форматирования использовал Biome, так как он объединяет возможности ESLint и Prettier в одном инструменте и работает заметно быстрее (настроил Husky и lint-staged, чтобы изменения проходили линтер и притер перед коммитом).
+
+Для стилизации использовал Tailwind. Он помогает быстрее собирать интерфейсы, не создавая отдельные CSS модули, и хорошо отлично подходит для небольших проектов.
+
+Для работы с формой использовал React Hook Form. Библа упрощает валидацию, управление состоянием формы и обработку отправки данных, благодаря чему выходит меньше кода.
+
+Для анимаций использовал Motion. Сделал плавное появление модального окна, индикацию успешного бронирования и анимацию состояний интерфейса, что сделало интерфейс плавным и приятным.
+
+Все файлы разнес на модули, чтобы импорты были понятнее и удобнее. 
+
+### Что бы ты доделал при наличии ещё времени?
+
+Если бы проект предполагал дальнейшее развитие и увеличение количества страниц, для организации архитектуры и масштабируемости я бы использовал FSD (Feature-Sliced Design).
+
+Для выбора даты и времени я бы отказался от нативных элементов браузера и использовал кастомный Date Picker и собственный селект слотов (возможно бы заменил на теги, это зачастую удобнее). Будет одинаковое поведение интерфейса на всех устройствах, что позволить сэкономить время потраченное на адаптивность и кроссплатформенность.
+
+При наличии нескольких страниц и необходимости переиспользования данных пользователя я бы добавил стейт менеджер для хранения состояния приложения.
+
+Также можно реализовать сохранение данных формы через Local или Session Storage или persistence в стейт менеджере, чтобы пользователь не терял введённые данные при обновлении страницы.
+
+С точки зрения UX/UI можно добавить брендинг заведения (логотип, фирменные цвета, дополнительные визуальные элементы) и сделать экран бронирования более персонализированным.
+
+Для импута телефона я бы реализовал кастомный инпут с маской ввода, ограничением недопустимых символов и возможностью выбора страны, если приложение ориентировано на международную аудиторию.
