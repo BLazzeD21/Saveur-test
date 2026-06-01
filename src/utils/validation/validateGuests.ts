@@ -6,7 +6,7 @@ export const validateGuests = (guestsCount: number): boolean | string => {
   }
 
   if (guestsCount > GUEST_COUNT_MAX || guestsCount < GUEST_COUNT_MIN) {
-    return 'Выберите из доступного диапазона';
+    return `Гостей может быть от ${GUEST_COUNT_MIN} до ${GUEST_COUNT_MAX}`;
   }
 
   return true;
