@@ -1,5 +1,5 @@
-import { BookingForm } from '@/components';
+import { Main } from '@/appPages';
 
 export default function Home() {
-  return <BookingForm />;
+  return <Main />;
 }

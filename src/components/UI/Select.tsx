@@ -1,4 +1,5 @@
 import type { FieldError, UseFormRegisterReturn } from 'react-hook-form';
+import { ErrorLabel } from '@/components/UI';
 import { cn } from '@/utils';
 
 interface SelectProps extends React.ComponentPropsWithoutRef<'select'> {
@@ -21,7 +22,7 @@ export const Select = ({
   return (
     <div>
       <label>
-        <p>{label}</p>
+        <p className="mb-1 text-sm sm:text-base">{label}</p>
         <select
           className={cn(
             'w-full rounded-xl border px-4 py-3 outline-none',
@@ -41,7 +42,7 @@ export const Select = ({
         </select>
       </label>
 
-      <p className="mt-1 min-h-5 text-xs italic text-red-400">{error?.message}</p>
+      <ErrorLabel error={error} />
     </div>
   );
 };

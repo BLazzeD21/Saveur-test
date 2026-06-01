@@ -1,4 +1,5 @@
 import type { FieldError, UseFormRegisterReturn } from 'react-hook-form';
+import { ErrorLabel } from '@/components/UI';
 import { cn } from '@/utils';
 
 interface InputProps extends React.ComponentPropsWithoutRef<'input'> {
@@ -20,12 +21,12 @@ export const Input = ({
   return (
     <div>
       <label>
-        <p>{label}</p>
+        <p className="mb-1 text-sm sm:text-base">{label}</p>
         <input
           type={type ?? 'text'}
           placeholder={placeholder}
           className={cn(
-            'w-full rounded-xl border px-4 py-3 outline-none',
+            'w-full rounded-xl border px-3 py-2.5 text-sm sm:px-4 sm:py-3 sm:text-base outline-none transition-colors',
             className,
             error ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-accent',
           )}
@@ -33,8 +34,7 @@ export const Input = ({
           {...props}
         />
       </label>
-
-      <p className="mt-1 min-h-5 text-xs italic text-red-400">{error?.message}</p>
+      <ErrorLabel error={error} />
     </div>
   );
 };

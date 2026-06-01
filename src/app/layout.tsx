@@ -24,7 +24,7 @@ export default function RootLayout({
       lang="ru"
       className={`${raleway.variable} h-full antialiased flex items-center justify-center`}
     >
-      <body className="">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
