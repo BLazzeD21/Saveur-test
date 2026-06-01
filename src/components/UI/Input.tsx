@@ -26,7 +26,7 @@ export const Input = ({
           type={type ?? 'text'}
           placeholder={placeholder}
           className={cn(
-            'w-full rounded-xl border px-3 py-2.5 text-sm sm:px-4 sm:py-3 sm:text-base outline-none transition-colors',
+            'w-80 sm:w-full rounded-xl border px-3 py-2.5 text-sm sm:px-4 sm:py-3 sm:text-base outline-none transition-colors',
             className,
             error ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-accent',
           )}

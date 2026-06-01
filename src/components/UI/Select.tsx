@@ -25,7 +25,7 @@ export const Select = ({
         <p className="mb-1 text-sm sm:text-base">{label}</p>
         <select
           className={cn(
-            'w-full rounded-xl border px-4 py-3 outline-none',
+            'w-80 sm:w-full rounded-xl border px-4 py-3 outline-none',
             className,
             error ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-accent',
           )}

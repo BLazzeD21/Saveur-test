@@ -52,7 +52,7 @@ export const BookingForm = ({ setBookingData, className, ...props }: BookingForm
       <h1 className="text-center text-2xl font-semibold sm:text-3xl">Бронирование столика</h1>
       <form
         onSubmit={bookingForm.handleSubmit(onSubmit)}
-        className="w-full rounded-3xl bg-form p-4 sm:p-6 md:p-8"
+        className="w-full rounded-3xl bg-form my-4"
       >
         <Input
           registration={bookingForm.register('name', {
