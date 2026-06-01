@@ -18,7 +18,7 @@ export const ConfirmationScreen = ({
   className,
   ...props
 }: ConfirmationScreenProps) => {
-  const { name, date, time, guests, phone } = bookingData;
+  const { name, date, time, guests } = bookingData;
 
   return (
     <motion.div
@@ -33,12 +33,12 @@ export const ConfirmationScreen = ({
       <div
         {...props}
         className={cn(
-          'w-full max-w-100 bg-background flex flex-col items-center justify-center mx-2 rounded-2xl p-4 sm:p-6 md:p-10 shadow-2xl my-4 sm:mx-4',
+          'w-full max-w-100 bg-background flex flex-col justify-center mx-2 rounded-2xl p-4 sm:p-6 md:p-10 shadow-2xl my-4 sm:mx-4',
           className,
         )}
       >
         <h2 className="text-center font-semibold text-2xl mb-2">Уважаемый {bookingData.name}!</h2>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center m-auto">
           <motion.div
             animate={{
               scale: [1, 1.2, 1],
@@ -49,20 +49,18 @@ export const ConfirmationScreen = ({
               ease: 'easeInOut',
             }}
           >
-            {' '}
             <Image src="/check.svg" alt="Галочка" height={25} width={25} />
           </motion.div>
 
           <p className="text-center"> Бронирование подтверждено</p>
         </div>
 
-        <div className="">
-          <p className="text-accent mt-5 text-left">Детали брони:</p>
+        <div className="pl-1.5">
+          <p className="text-accent my-5 text-center">Детали брони</p>
           <BookingDetail label="Имя">{name}</BookingDetail>
-          <BookingDetail label="Телефон">{phone}</BookingDetail>
-          <BookingDetail label="Дата и время">
-            {date} в {time}
-          </BookingDetail>
+          {/* <BookingDetail label="Телефон">{phone}</BookingDetail> */}
+          <BookingDetail label="Дата">{date}</BookingDetail>
+          <BookingDetail label="Время">{time}</BookingDetail>
           <BookingDetail label="Гостей">{guests}</BookingDetail>
         </div>
 
