@@ -13,7 +13,7 @@
   --color-form: var(--form-color);
   --color-accent: var(--accent-color);
   --color-text: var(---text-color);
-  --font-sans: var(--font-raleway);
+  --font-sans: var(--font-montserrat);
 }
 body {
   background: rgb(190, 190, 190);
