@@ -53,7 +53,7 @@ export const ConfirmationScreen = ({
             <Image src="/check.svg" alt="Галочка" height={25} width={25} />
           </motion.div>
 
-          <p className="text-center"> Бронь успешно подтверждена</p>
+          <p className="text-center"> Бронирование подтверждено</p>
         </div>
 
         <div className="">
