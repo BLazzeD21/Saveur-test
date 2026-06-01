@@ -1,6 +1,6 @@
 export const validateDate = (date: string): boolean | string => {
   if (!date) {
-    return 'Выберите дату';
+    return 'Выберите корректную дату';
   }
 
   const selected = new Date(date);

@@ -78,7 +78,7 @@ export const BookingForm = ({ setBookingData, className, ...props }: BookingForm
 
         <Input
           registration={bookingForm.register('date', {
-            required: 'Выберите дату',
+            required: 'Выберите корректную дату',
             validate: validateDate,
           })}
           min={new Date().toISOString().split('T')[0]}
