@@ -1,5 +1,5 @@
 export const validatePhone = (phone: string): boolean | string => {
-      if (!phone) {
+  if (!phone) {
     return 'Укажите номер телефона';
   }
 
@@ -11,5 +11,5 @@ export const validatePhone = (phone: string): boolean | string => {
 
   const isValid = digits.length === 11 && (digits.startsWith('7') || digits.startsWith('8'));
 
-  return isValid ? true : 'Введите корректный номер в формате +7 или 8';
+  return isValid ? true : 'Введите номер в формате +7 или 8';
 };

@@ -1,5 +1,5 @@
 export const validateName = (name: string): boolean | string => {
-    if (!name) {
+  if (!name) {
     return 'Введите имя';
   }
 
